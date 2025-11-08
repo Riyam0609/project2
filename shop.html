@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCHIANA-SHOP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  #bgimg {
+    background-image: url("luchianashopbgimg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+  }
+
+  body {
+    background: #f5f5f5;
+  }
+
+  .product-card {
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 230px;
+    
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: #fafafa;
+    padding: 10px;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .badge-discount {
+    background: black;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .badge-featured {
+    background: #e0b4a4;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 55px;
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .badge-new {
+    background: black;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: #999;
+  }
+
+  .rating {
+    color: #f39c12;
+  }
+
+  .product-info h6 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: Marcellus, sans-serif;
+    letter-spacing: 4px;
+  }
+
+  #img {
+    background-image: url("luchianashopbgimg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    height: 500px;
+    width: 100%;
+  }
+
+
+  @media (max-width: 768px) {
+    footer h2 {
+      font-size: 18px;
+      letter-spacing: 6px;
+    }
+  }
+   .footer {
+      background-color: #1e2a0b;
+      padding: 60px 8% 30px;
+      color: #ccc;
+      background-image:url(luchiana-footerimg.webp)
+      background-size: 80px 80px;
+    }
+
+    
+    .footer-top-nav {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .footer-top-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-top-nav li {
+      position: relative;
+    }
+
+    .footer-top-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .footer-top-nav li:not(:last-child)::after {
+      content: "•";
+      color: #a3c16d;
+      position: absolute;
+      right: -22px;
+    }
+
+    .footer-top-nav a:hover {
+      color: #a3c16d;
+    }
+
+    /* ===== MAIN FOOTER CONTENT ===== */
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 40px;
+    }
+
+    /* Left Column */
+    .footer-left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-left li {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .footer-left i {
+      margin-right: 10px;
+      color: #a3c16d;
+    }
+
+   
+    .footer-center {
+      text-align: center;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-logo {
+      letter-spacing: 10px;
+      color: #fff;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .social-icons a {
+      color: #a3c16d;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    /* Right Column */
+    .footer-right {
+      max-width: 320px;
+      text-align: right;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: #a3c16d;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== BOTTOM ROW ===== */
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 25px;
+      font-size: 13px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a:hover {
+      color: #a3c16d;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 900px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .footer-right {
+        max-width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .footer-top-nav ul {
+        gap: 15px;
+      }
+
+      .footer-top-nav li:not(:last-child)::after {
+        right: -12px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .footer-top-nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-logo {
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+
+      .social-icons a {
+        margin: 0 5px;
+        font-size: 16px;
+      }
+
+      .footer-left li,
+      .footer-right p {
+        font-size: 13px;
+      }
+    }
+
+
+</style>
+</head>
+
+
+
+<body>
+  <section class="container-fluid g-0" id="mainwrapper">
+    <section class="container-fluid  p-0" id="header">
+      <section class="container-fluid g-0" id="mainwrapper">
+        <section class="container-fluid  p-0" id="header">
+
+
+
+          <div class="card text-white">
+            <img src="luchianashopbgimg.webp" class="card-img" alt="..." style="width: 100%; height:600px;">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <h1 class="card-title fw-bolder  fs-1">SHOP</h1>
+            </div>
+          </div>
+          <div class="position-absolute start-50 translate-middle-x text-center"
+            style="top:400px; z-index: 99;font-size:20px;letter-spacing:3px;">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+                <li class="breadcrumb-item active text-white" aria-current="page">Shop</li>
+              </ol>
+            </nav>
+          </div>
+          </div>
+          <section class="container-fluid g-0" id="mainwrapper">
+            <section class="container-fluid fixed-top p-0" id="header">
+              <section class="container-fluid bg-light">
+                <section class="row">
+                  <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg navbar-light py-3"
+                      style="background: transparent; letter-spacing: 3px;">
+                      <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+                        <!-- LOGO -->
+                        <a class="navbar-brand fw-semibold" href="#"
+                          style="font-size:28px; letter-spacing:10px;">LUCHIANA</a>
+
+                       
+                        <ul class="navbar-nav mx-auto gap-4 d-none d-lg-flex text-center">
+                          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                          <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
+                          <li class="nav-item"><a class="nav-link" href="blog.html">BLOG</a></li>
+                          <li class="nav-item"><a class="nav-link" href="pages.html">PAGES</a></li>
+                          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                        </ul>
+
+                        
+                        <div class="d-flex align-items-center gap-3">
+
+                          
+                          <div class="d-none d-lg-flex gap-4" style="font-size:20px;">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-regular fa-user"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-bag-shopping"></i>
+                          </div>
+
+                         
+                          <div class="d-flex d-lg-none align-items-center gap-3" style="font-size:20px;">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-regular fa-user"></i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-bag-shopping"></i>
+
+                            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                              data-bs-target="#mainOffcanvas">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </nav>
+
+                    
+                    <div class="offcanvas offcanvas-end" id="mainOffcanvas">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title">MENU</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                      </div>
+
+                      <div class="offcanvas-body d-flex flex-column justify-content-between text-center">
+
+                
+                        <ul class="navbar-nav gap-3">
+                          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">SHOP</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">PAGES</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                        </ul>
+
+                        
+                        <div class="d-flex justify-content-center gap-4 py-3" style="font-size:22px;">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                          <i class="fa-regular fa-user"></i>
+                          <i class="fa-regular fa-heart"></i>
+                          <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </section>
+              </section>
+            </section>
+            <section class="container-fluid" id="popular">
+              <section class="container">
+                <div class="col-12 my-5" style="text-align: center;">
+                  <h1 style="background-color:#EEEEEE;">All Products</h1>
+                </div>
+                <div class="all-products-content" style="background-color: #FBFBFB;">
+                  <div class="row">
+                    <div class="col-6">
+                      <p class="text-p fs-3">Showing all 12 results</p>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end align-items-center">
+                      <p id="sortText" class="mb-0 d-flex">
+                        Default sorting
+                      <div class="dropdown-center ms-2">
+                        <button class="btn btn-outline-dark btn-sm dropdown-toggle" type="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Default Sorting</a></li>
+                          <li><a class="dropdown-item" href="#">Sort by : Popularity</a></li>
+                          <li><a class="dropdown-item" href="#">Sort by : Average Rating</a></li>
+                          <li><a class="dropdown-item" href="#">Sort by : Latest</a></li>
+                          <li><a class="dropdown-item" href="#">Sort by Price: Low to High</a></li>
+                          <li><a class="dropdown-item" href="#">Sort by Price: High to Low</a></li>
+                        </ul>
+                      </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+              </section>
+
+              </div>
+              </div>
+              </div>
+
+              <div class="container my-5">
+                <div class="row g-4">
+
+                  <!-- Product 1 -->
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <span class="badge badge-discount">-11%</span>
+                      <span class="badge badge-featured">FEATURED</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchianamatte.webp" class="product-img" alt="Airbrush Matte">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6>Airbrush Matte</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">Skin-perfecting bronzed
+                              filter for the face.</p>
+                            <div class="rating mb-2">★★★★☆</div>
+                            <p><span class="old-price">$45.00</span> <span class="fw-bold">$40.00</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 2 -->
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-bodifyinh.webp" class="product-img" alt="Bodifying Shampoo">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style="font-family: Marcellus, sans-serif; letter-spacing:4px;">Bodifying Shampoo</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">A gentle but thorough
+                              cleanser that leaves hair.</p>
+                            <p class="fw-bold">$45.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Product 3 -->
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-brighteningcorrector.webp" class="product-img" alt="Brightening Corrector">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style=" Marcellus, sans-serif; letter-spacing:4px;">Brightening Corrector</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">A full-coverage color
+                              corrector.</p>
+                            <p class="fw-bold">$80.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--product 4-->
+
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-liptint.webp" class="product-img" alt="Brightening Corrector">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style=" Marcellus, sans-serif; letter-spacing:4px;">EXTRA LIP TINT</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">Color enhancing tint that
+                              brings out the best in lips.</p>
+                            <p class="fw-bold">$80.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--product 5-->
+
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <span class="badge badge-discount">-11%</span>
+                      <span class="badge badge-featured">FEATURED</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-eyelinerpack.webp" class="product-img" alt="Airbrush Matte">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6>Airbrush Matte</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">A
+                              hyper-saturated,water-resistant,liquid eyeliner.</p>
+                            <p><span class="old-price">$40.00 -$80.00</span> <span class="fw-bold">$40.00-$80.00</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--product 6-->
+
+                  <div class="col-md-4">
+                    <div class="card product-card">
+                      <span class="badge badge-discount">-11%</span>
+                      <span class="badge badge-featured">FEATURED</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-facebodyfoundation.webp" class="product-img" alt="Airbrush Matte">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6>FACE & BODY FOUNDATION</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">A foundation for the face
+                              and body </p>
+                            <p><span class="old-price">$45.00</span> <span class="fw-bold">$40.00</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--product 7-->
+
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-flowerbomb.webp" class="product-img" alt="Bodifying Shampoo">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style="font-family: Marcellus, sans-serif; letter-spacing:4px;">FLOWERBOMB</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">Vert de Bergarmot,Coco de
+                              Mer Accord</p>
+                            <p class="fw-bold">$200.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!--product 8-->
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-haircoloring.webp" class="product-img" alt="Bodifying Shampoo">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style="font-family: Marcellus, sans-serif; letter-spacing:4px;">HAIR COLORING</h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">A semi-permanent hair
+                              color in a deep conditiong.</p>
+                            <p class="fw-bold">$30.00-$45.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--product 9-->
+
+                  <div class="col-md-4">
+                    <div class="card product-card position-relative">
+                      <span class="badge badge-new">NEW</span>
+                      <div class="row g-0 h-100">
+                        <div class="col-4 d-flex align-items-center justify-content-center">
+                          <img src="luchiana-lacticacid.webp" class="product-img" alt="Bodifying Shampoo">
+                        </div>
+                        <div class="col-8">
+                          <div class="product-info">
+                            <h6 style="font-family: Marcellus, sans-serif; letter-spacing:4px;">LACTIC ACID TREATMENT
+                            </h6>
+                            <p class="text-muted mb-2" style="font-family: Inter, sans-serif;">An all-in-one AHA
+                              treatment</p>
+                            <p class="fw-bold">$37.00</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <section class="container">
+                    <nav aria-label="...">
+                      <ul class="pagination pagination-lg -dark mt-5 py-5 justify-content-center">
+                        <li class="page-item active ">
+                          <a class="page-link bg-dark" aria-current="page">1</a>
+                        </li>
+                        <li class="page-item bg-dark"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item bg-dark"><a class="page-link" href="#">3</a></li>
+                      </ul>
+                    </nav>
+                </div>
+              </div>
+            </section>
+
+            <footer class="footer">
+
+              <!-- ===== TOP NAVIGATION ===== -->
+              <section class="container-fluid bg-dark mt-5 p-0 g-0" id="footer">
+                <section class="container">
+                  <section class="row">
+                        <div class="footer-top-nav">
+      <ul>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">OUR TEAM</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">MAINTENANCE MODE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== MAIN FOOTER CONTENT ===== -->
+    <div class="footer-container">
+      <!-- Left -->
+      <div class="footer-left">
+        <ul class="contact-info">
+          <li><i class="fas fa-phone"></i> +123 488 9652</li>
+          <li><i class="fas fa-map-marker-alt"></i> 25 West 21th Street, Miami FL, USA</li>
+          <li><i class="fas fa-envelope"></i> info@luchiana.com</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 10:00 - 18:00</li>
+        </ul>
+      </div>
+
+      <!-- Center -->
+      <div class="footer-center">
+        <h2 class="footer-logo">LUCHIANA</h2>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-right">
+        <p class="footer-text">
+          Style too own civil out along. Perfectly offending attempted add arranging age gentleman.
+          Get who uncommonly our expression ten increasing considered.
+        </p>
+        <a href="#" class="read-more">READ MORE</a>
+      </div>
+    </div>
+
+    <!-- ===== BOTTOM ROW ===== -->
+    <div class="footer-bottom">
+      <p>© 2020 LUCHIANA Theme. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">PRIVACY POLICY</a></li>
+        <li><a href="#">TERMS</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+
+
+                  </section>
+
+                </section>
+              </section><!--end of footer-->
+
+
+
+
+
+          </section>
+
+
+          </div>
+
+          </div>
+          </div>
+
+
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </section>
+
+  </section>
+  </section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

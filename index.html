@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Home -Luchiana</title>
+  <link href="icon" rel="https://parkofideas.com/luchiana/demo/wp-content/uploads/2021/01/luchiana-1646741386.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  .hero {
+    height: 90vh;
+  }
+
+  .small-title {
+    font-size: 34px;
+    letter-spacing: 10px;
+    word-spacing: 4px;
+    font-weight: 400;
+    font-size: bold;
+    color: black;
+    top: -350%;
+    left: 40%;
+    position: absolute;
+  }
+
+.card-img-top {
+    height: 220px;
+    object-fit: contain;
+}
+
+
+  .tracking-wide {
+    letter-spacing: 10px;
+    color: black;
+    font-size: 40px;
+    word-spacing: 4px;
+    font-size: bold;
+    font-weight: 500;
+    color: black;
+    line-height: 70px;
+    top: -200%;
+    left: 40%;
+    position: absolute;
+  }
+
+  .carousel-caption {
+    color: #000 !important;
+    font-size: 20px;
+    margin-top: 10px 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: none !important;
+  }
+
+   body {
+      background: #f5f5f5;
+    }
+    .product-card {
+      background: #fff;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 230px; 
+      transition: 0.3s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .product-img {
+      width: 100%;
+      height: 230px;
+     object-fit: contain;
+      background: #fafafa;
+      padding: 10px;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .badge-discount {
+      background: black;
+      color: white;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+    .badge-featured {
+      background: #e0b4a4;
+      color: white;
+      position: absolute;
+      top: 10px;
+      left: 55px;
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+    .badge-new {
+      background: black;
+      color: white;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .rating {
+      color: #f39c12;
+    }
+    .product-info h6 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: Marcellus, sans-serif;
+      letter-spacing: 4px;
+    }
+
+    #img{
+     background-image: url("luchianashopbgimg.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat:repeat;
+    height: 500px;
+    width: 100%;
+    }
+
+
+    .hero-clean {
+  background: url("luchiana-allproducts.webp") center/cover no-repeat;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:600px;
+  display: flex;
+  align-items: center;
+
+}
+
+
+.hero-clean::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(86, 120, 17, 0.62); 
+  z-index: 1;
+}
+
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.hero-img {
+  position: relative;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.hero-btn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  letter-spacing: 3px;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #ffffff;
+  color: #4a5c17;
+}
+
+
+@media(max-width: 767px){
+  .hero-text, .hero-img {
+    text-align: center !important;
+  }
+}
+
+.footer {
+      background-color: #1e2a0b;
+      padding: 60px 8% 30px;
+      color: #ccc;
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    
+    .footer-top-nav {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .footer-top-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-top-nav li {
+      position: relative;
+    }
+
+    .footer-top-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .footer-top-nav li:not(:last-child)::after {
+      content: "•";
+      color: #a3c16d;
+      position: absolute;
+      right: -22px;
+    }
+
+    .footer-top-nav a:hover {
+      color: #a3c16d;
+    }
+
+   
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 40px;
+    }
+
+   
+    .footer-left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-left li {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .footer-left i {
+      margin-right: 10px;
+      color: #a3c16d;
+    }
+
+    
+    .footer-center {
+      text-align: center;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-logo {
+      letter-spacing: 10px;
+      color: #fff;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .social-icons a {
+      color: #a3c16d;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    
+    .footer-right {
+      max-width: 320px;
+      text-align: right;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .read-more {
+      color: #a3c16d;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+   
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 25px;
+      font-size: 13px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a:hover {
+      color: #a3c16d;
+    }
+
+
+    @media (max-width: 900px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .footer-right {
+        max-width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .footer-top-nav ul {
+        gap: 15px;
+      }
+
+      .footer-top-nav li:not(:last-child)::after {
+        right: -12px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .footer-top-nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-logo {
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+
+      .social-icons a {
+        margin: 0 5px;
+        font-size: 16px;
+      }
+
+      .footer-left li,
+      .footer-right p {
+        font-size: 13px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+
+  <section class="container-fluid g-0" id="mainwrapper">
+    <section class="container-fluid  p-0" id="header">
+      <section class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-light py-3" style="background: transparent; letter-spacing: 3px;">
+  <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+    
+    <a class="navbar-brand fw-semibold" href="#" style="font-size:28px; letter-spacing:10px;">LUCHIANA</a>
+
+    
+    <ul class="navbar-nav mx-auto gap-4 d-none d-lg-flex text-center">
+      <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
+      <li class="nav-item"><a class="nav-link" href="blog.html">BLOG</a></li>
+      <li class="nav-item"><a class="nav-link" href="pages.html">PAGES</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+    </ul>
+
+   
+    <div class="d-flex align-items-center gap-3">
+
+      <div class="d-none d-lg-flex gap-4" style="font-size:20px;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+
+   
+      <div class="d-flex d-lg-none align-items-center gap-3" style="font-size:20px;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" id="mainOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">MENU</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column justify-content-between text-center">
+
+    
+    <ul class="navbar-nav gap-3">
+      <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">SHOP</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">PAGES</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+    </ul>
+
+    
+    <div class="d-flex justify-content-center gap-4 py-3" style="font-size:22px;">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-regular fa-user"></i>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+  </div>
+</div>
+         
+
+      </section>
+    </section>
+  </section>
+
+  <section class="slider">
+    <div class="container-fluid g-0 p-0">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="luchianaherosectionimg1.webp" class="d-block w-100" alt="..." style=" height: 800px;">
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center">
+              <p class="text-uppercase fw-dark mb-2" style="letter-spacing:6px;">NATURAL PRODUCTS</p>
+              <h1 class="display-3 fw-light text-dark">Organic</h1>
+              <h2 class="display-3 fw-light mb-4 text-dark">COLLECTION</h2>
+              <a href="#" class="btn btn-success px-4 py-2 text-uppercase" style="letter-spacing:2px;">SHOP NOW</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="luchianaherosectionimg2.webp" class="d-block w-100" alt="..." style=" height: 800px;">
+            <div
+              class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100 text-center">
+              <p class="text-uppercase fw-dark mb-2" style="letter-spacing:6px;">NEW FOR BODY</p>
+              <h1 class="display-3 fw-light text-dark">NATURAL</h1>
+              <h2 class="display-3 fw-light mb-4 text-dark">COLLECTION</h2>
+              <a href="#" class="btn btn-success px-4 py-2 text-uppercase" style="letter-spacing:2px;">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <section class="container-fluid p-5" style="background:#f5f5f5;">
+        <div class="container">
+          <div class="row text-center g-5 justify-content-around">
+
+            <div class="col-6 col-md-3 col-lg-2 category-item">
+              <img src="beauty-cream-icon.webp" class="category-icon mb-2 d-block w-100" alt="">
+              <p class="category-text mb-2">SKINCARE</p>
+            </div>
+
+            <div class=" col-6 col-md-3 col-lg-2 category-item">
+              <img src="EYELINER.png" class="category-icon mb-2 d-block w-100" alt="">
+              <p class="category-text mb-2">EYE</p>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2 category-item d-none d-md-block">
+              <img src="hairoil.png" class="category-icon mb-2 d-block w-100" alt="">
+              <p class="category-text mb-2">HAIR</p>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2 category-item d-none d-md-block">
+              <img src="fragrance.png" class="category-icon mb-2 d-block w-100" alt="">
+              <p class="category-text mb-2">FRAGRENCE</p>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2 category-item d-none d-lg-block">
+              <img src="lipstick-cosmetic.svg" class="category-icon mb-2 d-block w-100" alt="">
+              <p class="category-text mb-2">LIPS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  
+    <section class="container-fluid p-5 ">
+                        <div class="row">
+                            <ul class="nav nav-underline justify-content-center  flex-wrap gap-md-5 gap-2" style="color: white; font-weight: bold; line-height:70px;">
+  <li class="nav-item  d-flex justify-content-center col-6 col-md-auto ">
+    <a class="nav-link active" style="color: grey; font-size:20px;font-weight:400 gap-4; letter-spacing:0.78px;" aria-current="page" href="#">FEATURED</a>
+  </li>
+  <li class="nav-item d-flex justify-content-center col-6 col-md-auto">
+    <a class="nav-link" style="color:grey;font-size:20px;font-weight:400 gap-4;letter-spacing:0.78px;" href="#">POPULAR</a>
+  </li>
+  <li class="nav-item d-none d-md-block">
+    <a class="nav-link" style="color:grey;font-size:20px;font-weight:400 gap-4;letter-spacing:0.78px;" href="#">ON A SALE</a>
+  </li>
+  <li class="nav-item d-none d-md-block">
+    <a class="nav-link"style="color:grey;font-size:20px;font-weight:400 gap-4;letter-spacing:0.78px;" href="#">NEWEST</a>
+  </li>
+</ul>
+         
+                        </div>
+    </section>
+
+    
+       <div class="container my-5">
+  <div class="row g-5">
+
+    <!-- Product 1 -->
+     <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+    <div class="card text-center p-3 h-100">
+  <img src="luchianamatte.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">AIRBRUSH MATTE </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">Skin-perfecting bronzed filter for face</p>
+    <div class="rating mb-2">★★★★☆</div>
+    <p><span class="old-price">$45.00</span> <span class="fw-bold">$40.00</span></p>
+  </div>
+</div>
+     </div>
+
+
+     <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+     <div class="card text-center p-3 h-100">
+  <img src="eyelinerpack.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">EYELINER PACK </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">A hyper-saturated,water -resistant,liquid eyeliner</p>
+    <p><span class="old-price">$40.00</span> <span class="fw-bold">$80.00</span></p>
+  </div>
+</div>
+     </div>
+
+     <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+   <div class="card text-center p-3 h-100">
+  <img src="luchianamatte.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">FACE & BODY FOUNDATION </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">A Foundation for the face and body</p>
+    <div class="rating mb-2">★★★★☆</div>
+    <p><span class="old-price">$45.00</span> <span class="fw-bold">$40.00</span></p>
+  </div>
+</div>
+     </div>
+
+  </div>  
+</div>  
+
+ <div class="container my-5">
+  <div class="row g-4">
+
+    <!-- Product 1 -->
+     <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+    <div class="card text-center p-3 h-100">
+  <img src="luchiana-lacticacid.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">LACTIC ACID TREATMENT </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">An all-in-one AHA treatment</p>
+    <div class="rating mb-2">★★★★☆</div>
+    <p><span class="old-price">$45.00</span> <span class="fw-bold">$37.00</span></p>
+  </div>
+</div>
+     </div>
+
+  <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+ <div class="card text-center p-3 h-100">
+  <img src="midnight musk.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">MIDNIGHT MUSK </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">Earthy & Woody</p>
+    <div class="rating mb-2">★★★★☆</div>
+    <p><span class="old-price">$45.00</span> <span class="fw-bold">$150.00</span></p>
+  </div>
+</div>
+  </div>
+
+  <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+ <div class="card text-center p-3 h-100">
+  <img src="mositure balm.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <span class="badge badge-discount">-11%</span>
+        <span class="badge badge-featured">FEATURED</span>
+    <h5 class="card-title fw-bold" style="font-family: Marcellus, sans-serif; font-size:18px;">MOISTURE BALM </h5>
+    <p class="card-text" style="font-family: Inter, sans-serif; font-size:14px;">A bestselling luminizing mositure balm</p>
+    <div class="rating mb-2">★★★★☆</div>
+    <p><span class="old-price">$60.00</span> <span class="fw-bold">$40.00</span></p>
+  </div>
+</div>
+  </div>
+
+    <button type="button" class="btn btn-dark text-uppercase">VIEW ALL FEATURED</button>
+  </div>
+ </div>
+ 
+
+ <section id="articles container p-3">
+  <div class="row m-5 text-center" style="line-height: 20px;">
+      <h3 class="small-text fs-3 text-uppercase fw-semibold" style="letter-spacing: 20px;">OUR LATEST</h3>
+      <h1 class="text-title fs-1 text-uppercase fw-semibold">ARTICLES</h1>
+  </div>
+ </section>
+
+   
+<section class="container py-5">
+  <div class="row g-4">
+
+    <!-- CARD 1 -->
+    <div class="col-12 col-md-6">
+      <div class="card border-0 shadow-sm p-3 d-flex flex-row blog-card">
+        <img src="new trends.webp" class="blog-img d-block w-50" alt="">
+        <div class="ps-4">
+          
+          <h4 class="blog-title fs-2">NEW TRENDS IN 2020</h4>
+          <p class="blog-category fs-3">Cosmetic • Fashion</p>
+          <a href="#" class="read-more text-success">READ MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="col-12 col-md-6">
+      <div class="card border-0 shadow-sm p-3 d-flex flex-row blog-card">
+        <img src="videopost.webp" class="blog-img d-block w-50" alt="">
+        <div class="ps-4">
+          
+          <h4 class="blog-title fs-2">VIDEO POST</h4>
+          <p class="blog-category fs-3">Beauty • Fashion</p>
+          <a href="#" class="read-more text-success">READ MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="col-12 col-md-6">
+      <div class="card border-0 shadow-sm p-3 d-flex flex-row blog-card">
+        <img src="gallerypost.webp" class="blog-img d-block w-50" alt="">
+        <div class="ps-4">
+          
+          <h4 class="blog-title fs-2">GALLERY POST</h4>
+          <p class="blog-category fs-3">Cosmetic • Fashion</p>
+          <a href="#" class="read-more text-success">READ MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="col-12 col-md-6">
+      <div class="card border-0 shadow-sm p-3 d-flex flex-row blog-card">
+        <img src="remebertrends.webp" class="blog-img d-block w-50" alt="">
+        <div class="ps-4">
+         
+          <h4 class="blog-title fs-2">REMEMBER TRENDS</h4>
+          <p class="blog-category fs-3">Beauty</p>
+          <a href="#" class="read-more text-success">READ MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-success  btn -sm text-uppercase fs-4">ALL ARTICLES</button>
+
+  </div>
+</section>
+
+    <footer class="footer">
+
+              <!-- ===== TOP NAVIGATION ===== -->
+              <section class="container-fluid bg-dark mt-5 p-0 g-0" id="footer">
+                <section class="container">
+                  <section class="row">
+                        <div class="footer-top-nav">
+      <ul>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">OUR TEAM</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">MAINTENANCE MODE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <!-- ===== MAIN FOOTER CONTENT ===== -->
+    <div class="footer-container">
+      <!-- Left -->
+      <div class="footer-left">
+        <ul class="contact-info">
+          <li><i class="fas fa-phone"></i> +123 488 9652</li>
+          <li><i class="fas fa-map-marker-alt"></i> 25 West 21th Street, Miami FL, USA</li>
+          <li><i class="fas fa-envelope"></i> info@luchiana.com</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 10:00 - 18:00</li>
+        </ul>
+      </div>
+
+      <!-- Center -->
+      <div class="footer-center">
+        <h2 class="footer-logo">LUCHIANA</h2>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="footer-right">
+        <p class="footer-text">
+          Style too own civil out along. Perfectly offending attempted add arranging age gentleman.
+          Get who uncommonly our expression ten increasing considered.
+        </p>
+        <a href="#" class="read-more">READ MORE</a>
+      </div>
+    </div>
+
+    <!-- ===== BOTTOM ROW ===== -->
+    <div class="footer-bottom">
+      <p>© 2020 LUCHIANA Theme. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">PRIVACY POLICY</a></li>
+        <li><a href="#">TERMS</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+
+
+                  </section>
+
+                </section>
+              </section><!--end of footer-->
+  
+
+
+
+
+
+  </div>
+   </div>
+
+
+  
+
+                 
+
+
+ </section>
+  </section>
+  </div>
+  </div>
+  </section>
+
+
+
+ 
+
+
+
+  <!--end of 
+
+    
+                <div class="col-10 col-md-3 m-2 justify-content-center">
+                  <div class="card" style="width: 30rem;">
+                    <img src="img/img_1.jpg" class="card-img-top" alt="Card 1">
+                    <div class="card-body">
+                      <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card’s content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-10 col-md-3 m-2 d-md-block">
+                  <div class="card" style="width: 30rem;">
+                    <img src="img/img_2.jpg" class="card-img-top" alt="Card 2">
+                    <div class="card-body">
+                      <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card’s content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-10 col-md-3 m-2 d-md-block">
+                  <div class="card" style="width: 30rem;">
+                    <img src="img/img_3.jpg" class="card-img-top" alt="Card 3">
+                    <div class="card-body">
+                      <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card’s content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+  <div class="carousel-item">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-3 m-2 justify-content-center">
+        <div class="card" style="width: 30rem;">
+          <img src="img/img_7.jpg" class="card-img-top" alt="Card 4">
+          <div class="card-body">
+            <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+              the card’s content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-10 col-md-3 m-2  d-md-block">
+        <div class="card" style="width: 30rem;">
+          <img src="img/img_4.jpg" class="card-img-top" alt="Card 5">
+          <div class="card-body">
+            <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+              the card’s content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-10 col-md-3 m-2 d-md-block">
+        <div class="card" style="width: 30rem;">
+          <img src="img/img_5.jpg" class="card-img-top" alt="Card 6">
+          <div class="card-body">
+            <h5 class="card-title" style="text-decoration: underline; color: #005555;">$1,291,000</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+              the card’s content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END CAROUSEL -->
+
+  </section>
+  </section>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
